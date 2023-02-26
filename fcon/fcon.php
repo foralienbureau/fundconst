@@ -16,7 +16,7 @@ define( 'FCON_FILE', __FILE__ );
 define( 'FCON_PATH', plugin_dir_path( __FILE__ ) );
 define( 'FCON_URL', plugin_dir_url( __FILE__ ) );
 define( 'FCON_BASENAME', plugin_basename( __FILE__ ) );
-define( 'FCON_VERSION', '0.0.1' );
+define( 'FCON_VERSION', '0.0.2' );
 
 
 function fcon_activate_plugin() {
