@@ -13,7 +13,6 @@ body {
 
 a {
     color: $linkColor;
-    text-decoration-color: transparentize($linkColor, 0.5);
 }
 
 .container {
@@ -24,7 +23,11 @@ a {
 
 .page-header {
     background: #EAF4FF;
-    padding: 10vh 0;
+    padding: 80px 0;
+
+    &__links {
+        margin-top: 30px;
+    }
 }
 
 .page-content {
