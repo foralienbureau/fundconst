@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        {% if page.title != site.title %}
+            <title>{{ page.title }} - {{ site.title }}</title>
+        {% else %}
+            <title>{{ site.title }}</title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    </head>
+    <body>
+        <header class="page-header" role="banner">
+            <h1 class="page-header__name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+            <h2 class="page-header__tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+            
+            <nav class="page-header__link">
+                <a href="{{ site.download_url }}" class="btn">Скачать</a>
+                <a href="{{ site.wiki_url }}" class="btn">Инструкция</a>
+            </nav>
+        </header>
+
+        <main class="page-content" role="main">
+            {{ content }}
+        </main>
+
+        <footer class="page-footer">
+            {% if site.github.is_project_page %}
+                <a href="{{ site.github.repository_url }}" class="btn">Проект на GitHub</a>
+            {% endif %}
+        </footer>
+    </body>
+</html>
