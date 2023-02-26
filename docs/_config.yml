@@ -31,9 +31,9 @@ github:
   tar_url: https://github.com/foralienbureau/fundconst/releases/download/v.0.0.2/fcon.zip
 
 # Build settings
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-- jekyll-remote-theme
+theme: jekyll-theme-cayman
+# plugins:
+# - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
