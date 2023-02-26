@@ -17,8 +17,8 @@
                 <div class="page-header__tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</div>
                 
                 <nav class="page-header__links">
-                    <a href="{{ site.download_url }}" class="btn">Скачать</a>
-                    <a href="{{ site.wiki_url }}" class="btn">Инструкция</a>
+                    <a href="{{ site.download_url }}" target="_blank">Скачать</a>
+                    <a href="{{ site.wiki_url }}" target="_blank">Инструкция</a>
                 </nav>
             </div>
         </header>
@@ -31,7 +31,7 @@
 
         <footer class="page-footer">
             {% if site.github.is_project_page %}
-                <a href="{{ site.github.repository_url }}" class="btn">Проект на GitHub</a>
+                <a href="{{ site.github.repository_url }}" target="_blank">Проект на GitHub</a>
             {% endif %}
         </footer>
     </body>
