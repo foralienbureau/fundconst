@@ -1,0 +1,75 @@
+/* CTA */
+.fcon-block-cta {
+
+}
+
+.cta {
+    position: relative;
+    z-index: 2;
+
+    &__bg {
+        position: absolute;
+        z-index: 3;
+        width: calc(100vw - #{$scrollbar});
+        max-width: $screen_limit; 
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+    }
+
+    &.align-left &__content {
+        @include align-container();
+    }
+
+    &.align-left &__grid {
+        max-width: 760px;
+    }
+
+    &.align-center &__content {
+        text-align: center;
+    }
+
+    &__title {
+        @include extra-title();
+        margin-bottom: $base*4;
+    }
+
+    &__text {
+        font-size: 1.2em;
+        line-height: 1.65;
+
+        p {
+            line-height: inherit
+        }
+    }
+
+    &__button {
+        margin-top: $base*8;
+    }
+
+    @include upto(large-screens) {
+        padding: $base*10 0;
+    }
+    
+    @include for(large-screens) {
+        padding: $base*12 0;
+
+        &__title {
+
+        }
+
+        &__text {
+            
+        }
+    }
+}

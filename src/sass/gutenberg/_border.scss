@@ -1,0 +1,24 @@
+/* border */
+.fcon-block-border {
+    margin-top: $base*10;
+    margin-bottom: $base*10;
+
+    &.no-margin {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &.alignwide {
+        @include align-container();
+    }
+
+    &.alignfull {
+        @include align-full();
+    }
+}
+
+.custom-border {
+    width: 100%;
+
+
+}

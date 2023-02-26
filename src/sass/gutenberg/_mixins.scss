@@ -1,0 +1,50 @@
+/** mixins **/
+
+@mixin link-in-content {
+    display: inline;
+    color: inherit;
+    background-color: transparent;
+    text-decoration: none;
+    transition: background .25s cubic-bezier(0.33, 0.66, 0.66, 1);
+
+    //border-bottom: 1px solid #9FC9FE;
+    box-shadow: inset 0  -.294117em 0 $link_decoration; 
+    overflow-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
+
+    &:hover {
+        background-color: $link_decoration;
+        color: #000;
+    }
+}
+
+@mixin link-reset {
+    box-shadow: none;
+    border-bottom: none;
+}
+
+@mixin cap-text() {
+    font-family: $text;
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: $color-text;
+    font-weight: 300;
+
+    strong, b {
+        font-weight: 500;
+        color: inherit;
+    }
+
+    a {
+        display: inline;
+        color: inherit;
+        @include link-in-content();
+    }
+}
+
+@mixin caption {
+    @include cap-text();
+    max-width: 100%;
+    padding-top: $base;
+}

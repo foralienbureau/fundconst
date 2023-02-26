@@ -1,0 +1,44 @@
+{
+    "key": "group_632354a7a45ab",
+    "title": "6. CSS-стили",
+    "fields": [
+        {
+            "key": "field_632354c5db9cc",
+            "label": "CSS-стили",
+            "name": "custom_css_code",
+            "type": "textarea",
+            "instructions": "Код стилей указанный в этом разделе будет применяться ко всем лендингам",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "fcon-basics"
+            }
+        ]
+    ],
+    "menu_order": 60,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1663259942
+}

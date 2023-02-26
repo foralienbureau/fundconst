@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+
+/* columns */
+.wp-list-table .column-id,
+.wp-list-table .column-menu_order{
+	width: 5%;
+}
+
+
+.leyka-admin-default .wp-list-table.widefat td.column-fcon_shortcode input.campaign-shortcode {
+	width: 100%;
+}

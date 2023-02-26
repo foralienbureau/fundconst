@@ -1,0 +1,136 @@
+/* Basic text styles - some defaults may be broken */
+.the-content {
+
+    a:not([class]) {
+        @include link-in-content(); 
+    }
+
+    p {
+        @include intext-bottom-margin();
+        &.has-background {
+            padding: $base*5 $base*6;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: inherit;
+
+        &:first-child { margin-top: 0; }
+        
+        &.mb-0 { margin-bottom: 0; }
+        &.mt-0 { margin-top: 0; }
+        
+        strong, b { font-weight: inherit; }
+
+        a, a:not([class]) { 
+            color: inherit; 
+            border-color: transparent;
+            box-shadow: unset;
+        }
+    }
+
+    h1 {
+        @include extra-title();
+        @include intext-top-margin(1.85);
+        @include intext-bottom-margin(1.2);
+    }
+
+
+    h2 {
+        @include h2-title();
+        @include intext-top-margin(1.85);
+        @include intext-bottom-margin();
+    } 
+
+    h3 {
+        @include h3-title();
+        @include intext-top-margin(1.5);
+        @include intext-bottom-margin(0.5);
+    }
+
+    h4 {
+        @include h4-title();
+        @include intext-top-margin(1);
+        @include intext-bottom-margin(0.5);
+    }
+
+    h5 {
+        @include h5-title();
+        @include intext-bottom-margin(0.5);
+    }
+
+    h6 {
+        @include h6-title();
+        @include intext-bottom-margin(0.3);
+    }
+
+
+    h2 + h3, h2 + h4, h2 + h5, h2 + h6,
+    h3 + h4, h3 + h5, h3 + h6,
+    h4 + h5, h4 + h6, h5 + h6 {
+        margin-top: 0; //reset top margin for natural one
+    }
+
+    h2 + h6, h3 + h6, h4 + h6, h5 + h6 {
+        @include intext-bottom-margin();
+    }
+
+    // lists
+    ul:not([class]) {
+        margin: 0 0 0 1.5em;
+        @include intext-bottom-margin();
+
+        li {
+            position: relative;
+            padding-left: 20px;
+
+            &:before {
+                content: '–';
+                color: #000;
+                display: inline-block;
+                line-height: inherit;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            li {
+                padding-left: 0;
+                break-inside: avoid;
+                &:before { display: none; }
+            }
+        }
+
+        &:first-child { margin-top: 0;  }
+    }
+
+    ul ul { list-style: circle; }
+    ul ul ul { list-style: square; }
+
+    ol:not([class]) {
+       list-style: decimal;
+       margin: 0 0 0 3em;
+       &:first-child {  margin-top: 0;  }
+
+       @include intext-bottom-margin();
+    }
+
+    ol ol { list-style: lower-alpha; }
+    ol ol ol { list-style: lower-roman; }
+
+    ul ul,
+    ul ol,
+    ol ul,
+    ol ol {
+       margin-bottom: 0;
+    }
+
+    li {
+        margin-bottom: $inpage-margin-base*0.4;
+        &:last-child { margin-bottom: 0; }
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+}

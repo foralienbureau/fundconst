@@ -1,0 +1,35 @@
+/** Colors */
+
+//Colors
+$body_bg:           var(--fcon-color-body-bg);
+$body_bg_rgb:       var(--fcon-color-body-bg-rgb);
+$body_text:         var(--fcon-color-body-text);
+$body_text_rgb:     var(--fcon-color-body-text-rgb);
+$link_decoration:   var(--fcon-color-link-decoration);
+$basic_button:      var(--fcon-color-basic-button);
+$basic_button_rgb:  var(--fcon-color-basic-button-rgb);
+$progress_bar:      var(--fcon-color-progress-bar);
+
+
+$black: #000000; // black
+$white: #ffffff; // white
+
+
+$color-text:            $body_text; 
+$color-white:           $white;
+$color-text-light:      rgba($body_text_rgb, 0.5);
+
+$color-link:            $link_decoration;
+$color-accent:          $basic_button;
+$color-progress:        $progress_bar;
+
+
+$color-border:          #DBDBDB; 
+$color-border-dark:     #22181C;
+$color-bg:              $body_bg; 
+$color-bg-light:        #F4F5F5; 
+
+
+$color-error: #f51441;
+$color-success: $progress_bar;
+

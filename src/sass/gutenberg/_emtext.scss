@@ -1,0 +1,74 @@
+/* Em-text */
+
+.fcon-block-emtext {
+
+}
+
+.emtext {
+    position: relative;
+    padding: $base*6 0;
+    z-index: 2;
+
+    .has-background-color & {
+        padding: $base*12 0;
+    }
+    
+    .has-background-color &:before {
+        content: '';
+        display: block;
+        @include full-width();
+        z-index: 3;
+    }
+
+    &__div {
+        position: relative;
+        z-index: 10;
+
+        &.none {
+            display: none;
+        }
+
+        &.line {
+            height: 1px;
+            width: 100%;
+            position: relative;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 65px;
+                height: 1px;
+                background: currentColor;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &.dots {
+            height: 12px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+
+            svg {
+                width: 145px;
+                height: 12px;
+                fill: currentColor;
+            }
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 10;
+        color: currentColor;
+        text-align: center;
+        padding: $base*6;
+
+        @include extra-title();
+    }
+
+
+}

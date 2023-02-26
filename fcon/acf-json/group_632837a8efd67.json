@@ -1,0 +1,59 @@
+{
+    "key": "group_632837a8efd67",
+    "title": "Кампании Лейки",
+    "fields": [
+        {
+            "key": "field_632837bd43514",
+            "label": "Связанные кампании для сбора средств",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Для редактирования кампании перейдите в ее настройки. Для сбора средств используется последняя по дате привязанная кампания",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_63283876369fa",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "[connected_leyka] HTML here",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "fconland"
+            }
+        ]
+    ],
+    "menu_order": 15,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1663581493
+}

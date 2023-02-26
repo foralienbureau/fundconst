@@ -1,0 +1,71 @@
+/* modal */
+.fcon-modal {
+    z-index: -1;
+    display: none;
+
+    &.is-open {
+        display: block;
+        z-index: 1800;
+        position: fixed;
+        width: calc( 100vw - #{$scrollbar} );
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: $color-bg-light;
+    }
+
+    &__frame {
+        background: $color-white;
+        border: 1px solid $color-border;
+        border-radius: 2px;
+
+        @include upto(large-screens) {
+            width: 100%;
+            height: 100%;
+        }
+
+        @include for(large-screens) {
+            position: absolute;
+            width: calc(100% - #{$large_pad} - #{$large_pad});
+            max-width: $text_cont;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+    }
+
+    &__close-link {
+        svg {
+            width: 19px;
+            height: 18px;
+            fill: $color-text; 
+        }
+    }
+
+    &__content {
+        @include upto(large-screens) {
+            padding: $base*6 0;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+
+        @include for(large-screens) {
+            .has-period {
+                padding-top: $base*4;
+            }
+        }
+    }
+
+    @include upto(large-screens) {
+        .fcon-form__period {
+            margin: 0 -30px;
+        }
+    }
+}

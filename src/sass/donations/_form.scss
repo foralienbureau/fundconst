@@ -1,0 +1,149 @@
+/* Donations form */
+
+.fcon-form {
+    font-family: $text;
+    background: $color-white;
+    color: $color-text;
+
+    &__agree {
+        margin-top: $base*2;
+        @include upto(large-screens) {
+            overflow: hidden;
+        }
+    }
+
+    &--full {
+        border-radius: 2px;
+
+        @include upto(large-screens) {
+            padding: 36px 30px;
+
+            &.has-period {
+                padding-top: 0;
+            }
+        }
+
+        @include for(large-screens) {
+            padding: 50px 68px 48px;
+
+            &.has-period {
+                padding-top: 0;
+            }
+        }
+    }
+
+    &--full &__submit {
+        margin-top: $base*3;
+    }
+
+    &--full &__amount {
+        margin-bottom: $base*4;
+    }
+
+    &--full &__title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: $base*3;
+    }
+
+    &--full.has-period &__title {
+        margin-bottom: $base*3;
+    }
+
+    &--full &__period {
+        padding-bottom: $base*5;
+    }
+
+    &--compact.has-period {
+        @include for(large-screens) {
+            margin-top: -5*$base;
+        }
+    }
+
+    &--compact &__title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: $base*2;
+    }
+
+    &--compact.has-period &__title {
+        margin-bottom: $base*3;
+    }
+
+    &--compact &__submit {
+        margin-top: 8px;
+
+        @include for(large-screens) {
+
+            .fcon-donate-button {
+                width: 100%;
+            }
+        }
+    }
+
+    &--compact &__period {
+        padding-bottom: $base*2;
+    }
+}
+
+
+.fcon-form--full .fcon-period {
+
+    @include upto(large-screens) {
+        margin: 0 -30px;
+        padding: 0 30px;
+    }
+    
+    @include for(large-screens) {
+        margin: 0 -68px;
+        padding: 0 68px;
+    }
+}
+
+.fcon-form--compact .fcon-period {
+
+    @include for(large-screens) {
+        margin: 0 -30px;
+        padding: 0 30px;
+    }
+}
+
+.fcon-modal__content .fcon-form--full .fcon-period {
+    @include upto(large-screens) {
+        margin: 0;
+        padding: 0 30px;
+    }
+}
+ 
+.fcon-donor-field--email {
+    margin-top: 19px;
+}
+
+.fcon-donate-button {
+    @include button-base();
+    @include button-size();
+    @include button-filled();
+}
+      
+.fcon-field-error {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-error;
+}
+
+.fcon-form-error {
+    font-size: 12px;
+    line-height: 16px;
+    color: $color-error;
+    border: 1px solid $color-error;
+    background: transparentize($color-error, 0.9);
+    border-radius: 3px;
+    padding: $base*2 $base*3;
+
+    // icon ?
+
+    &.visible {
+        margin: $base 0;
+    }
+}

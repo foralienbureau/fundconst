@@ -1,0 +1,253 @@
+{
+    "key": "group_6322d5210065b",
+    "title": "5. Настройки шрифтов",
+    "fields": [
+        {
+            "key": "field_6322d6b9147ef",
+            "label": "Заголовок",
+            "name": "title_font",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6322d6d2147f0",
+                    "label": "Способ загрузки шрифта",
+                    "name": "load_type",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "inline": "Встроенный код font-face",
+                        "external": "Внешний CSS-файл"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "inline",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_6322d71d147f1",
+                    "label": "Декларация font-face",
+                    "name": "font_face",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6322d6d2147f0",
+                                "operator": "==",
+                                "value": "inline"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6322d75022815",
+                    "label": "Внешний CSS-файл",
+                    "name": "style_link",
+                    "type": "text",
+                    "instructions": "Укажите ссылку на внешний CSS-файл, содержащий код загрузки шрифтов (<b>используйте абсолютный ссылки для файлов шрифтов!<\/b>), подходит для Google Fonts.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6322d6d2147f0",
+                                "operator": "==",
+                                "value": "external"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6322d739147f2",
+                    "label": "Декларация font-family",
+                    "name": "font_family",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_6322d7dd85558",
+            "label": "Основной текст",
+            "name": "body_font",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6322d7dd85559",
+                    "label": "Способ загрузки шрифта",
+                    "name": "load_type",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "inline": "Встроенный код font-face",
+                        "external": "Внешний CSS-файл"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "inline",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_6322d7dd8555a",
+                    "label": "Декларация font-face",
+                    "name": "font_face",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6322d7dd85559",
+                                "operator": "==",
+                                "value": "inline"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_6322d7dd8555b",
+                    "label": "Внешний CSS-файл",
+                    "name": "style_link",
+                    "type": "text",
+                    "instructions": "Укажите ссылку на внешний CSS-файл, содержащий код загрузки шрифтов (<b>используйте абсолютный ссылки для файлов шрифтов!<\/b>), подходит для Google Fonts.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6322d7dd85559",
+                                "operator": "==",
+                                "value": "external"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6322d7dd8555c",
+                    "label": "Декларация font-family",
+                    "name": "font_family",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "fcon-basics"
+            }
+        ]
+    ],
+    "menu_order": 50,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1663235205
+}

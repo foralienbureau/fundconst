@@ -1,0 +1,271 @@
+/** Presets **/
+
+//Break points
+$one:          480px; //small
+$two:          767px; //medium
+$three:        1120px; //large  
+$four:         1200px; //exlarge
+$five:         1440px; //xxlarge 
+
+
+//Page layout
+$base:         6px;
+$full_cont:    1200px; 
+$text_cont:    790px;
+$semi_cont:    890px;
+$gut:      	   36px;
+$screen_limit: 1600px;
+
+
+// Container
+$mobile_pad:    30px;
+$medium_pad:    40px;
+$large_pad:     45px;
+$container_fix: 1200px + 45px + 45px;
+
+
+// Fixed sized 
+$scrollbar: var(--scroll-bar-width);
+
+
+//Margins
+$inpage-margin-base:    $base*4;
+$pad:                   $base*6;
+
+
+//Adminbar
+$adminbar_large_screen: 32px; //w > 780px
+$adminbar_small_screen: 46px;
+
+
+// MQ
+@mixin for($media) {
+	@if $media == small-screens {
+		@media screen and (min-width: $one) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (min-width: $two) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (min-width: $three) { @content; }
+	}
+	@else if $media == exlarge-screens {
+		@media screen and (min-width: $four) { @content; }
+	}
+	@else if $media == xxlarge-screens {
+		@media screen and (min-width: $five) { @content; }
+	}
+}
+
+@mixin upto($media) {
+	@if $media == small-screens {
+		@media screen and (max-width: $one - 1) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media screen and (max-width: $two - 1) { @content; }
+	}
+	@else if $media == large-screens {
+		@media screen and (max-width: $three - 1) { @content; }
+	}
+	@else if $media == exlarge-screens {
+		@media screen and (max-width: $four - 1) { @content; }
+	}
+	@else if $media == xxlarge-screens {
+		@media screen and (max-width: $five - 1) { @content; }
+	}
+}
+
+@mixin between($bottom, $top) {
+    @if $bottom == small-screens and $top == medium-screens {
+        @media screen and (min-width: $one) and (max-width: $two - 1) { @content; }
+    }
+    @else if $bottom == small-screens and $top == large-screens {
+        @media screen and (min-width: $one) and (max-width: $three - 1) { @content; }
+    }
+    @else if $bottom == medium-screens and $top == large-screens {
+        @media screen and (min-width: $two) and (max-width: $three - 1) { @content; }
+    }
+    @else if $bottom == medium-screens and $top == exlarge-screens {
+        @media screen and (min-width: $two) and (max-width: $four - 1) { @content; }
+    }
+    @else if $bottom == large-screens and $top == exlarge-screens {
+        @media screen and (min-width: $three) and (max-width: $four - 1) { @content; }
+    }
+}
+
+
+// Animations
+@keyframes fadeIn {
+  0%   { 
+    display: none;
+    opacity: 0; 
+  }
+  1%{
+    display: block; 
+    opacity: 0; 
+  }
+  100% { 
+    display: block; 
+    opacity: 1; 
+  }
+}
+
+
+@keyframes fadeOut {
+  0%   { 
+    display: block;
+    opacity: 1; 
+  }
+  99%{
+    display: block; 
+    opacity: 0; 
+  }
+  100% { 
+    display: none; 
+    opacity: 0; 
+  }
+}
+
+@keyframes scaleUp {
+	0% {
+		display: none;
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	1% {
+		display: block;
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+
+@keyframes slideIn {
+  0%   { 
+    display: none;
+    opacity: 0; 
+    height: 0;
+  }
+  1%{
+    display: block; 
+    opacity: 0;
+    height: 0; 
+  }
+  100% { 
+    display: block; 
+    opacity: 1; 
+    height: auto;
+  }
+}
+
+
+@keyframes slideOut {
+  0%   { 
+    display: block;
+    opacity: 1; 
+    height: auto;
+  }
+  99%{
+    display: block; 
+    opacity: 0;
+    height: 0; 
+  }
+  100% { 
+    display: none;
+    opacity: 0; 
+    height: 0;
+  }
+}
+
+
+
+/** Utilities **/
+@function value_from_map($key, $map) {
+    @if map-has-key($map, $key) {
+        @return map-get($map, $key);
+    }
+
+    @warn "Unknown '#{$key}' in $map.";
+    @return null;
+}
+
+@mixin hidden { //Hide for both screenreaders and browsers
+    display: none;
+    visibility: hidden; 
+}
+
+@mixin visuallyhidden { //Hide only visually, but have it available for screenreaders
+    position : absolute;
+    clip : rect(0 0 0 0);
+    overflow : hidden;
+    margin: -1px;
+    padding : 0;
+    height : 1px;
+    width : 1px;
+    border : 0; 
+}
+
+@mixin screen-reader {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.screen-reader-text {
+    @include screen-reader();
+}
+
+@mixin image-replace {
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    text-decoration: none;
+}
+
+@mixin no-select {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+@mixin cf {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin transition-all {
+    transition: all .35s;
+}
+
+
+// Support for CSS min/max/clamp function for gulp sass
+@function css-function( $function, $values... ) {
+    @return 
+        $function
+        + unquote( '(' )
+        + $values
+        + unquote( ')' )
+    ;
+}
+
+@function css-min( $values... ) {
+    @return css-function( min, $values );
+}
+
+@function css-max( $values... ) {
+    @return css-function( max, $values );
+}
+
+@function css-clamp( $values... ) {
+    @return css-function( clamp, $values );
+}

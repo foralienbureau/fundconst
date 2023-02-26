@@ -1,0 +1,64 @@
+/** target **/
+
+.fcon-progress {
+
+    &__scale {
+        margin-bottom: $base*2;
+    }
+
+    &__labels {
+
+    }
+}
+
+.fcon-scale {
+    width: 100%;
+    height: 7px;
+    position: relative;
+    z-index: 2;
+
+    &__bg {
+        width: 100%;
+        height: 100%;
+        background: $progress_bar;
+        opacity: 0.2;
+        border-radius: 2px;
+        position: relative;
+        z-index: 3;
+    }
+
+    &__progress {
+        min-width: 1%;
+        background: $progress_bar;
+        height: 100%;
+        border-radius: 2px;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+.fcon-target-labels {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    line-height: 20px;
+
+    &__collected {
+        font-size: 17px;
+        font-weight: 600;
+        color: $progress_bar;;
+    }
+
+    &__needed {
+        font-size: 16px;
+        color: $color-text;
+
+        .label {
+            margin-right: $base;
+        }
+    }
+}

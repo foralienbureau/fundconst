@@ -1,0 +1,280 @@
+/** amout **/
+@mixin amount-block() {
+    display: inline-block;
+
+    width: 100%;
+    height: $input-height;
+    margin: 0;
+    padding: 0 3px;
+    outline: none;
+
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    line-height: $input-height - 4px;
+
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .35s;
+
+    dfn { 
+        font-style: normal;
+        font-weight: inherit; 
+    }  
+}
+
+
+.fcon-amount {
+    &__error {
+        text-align: center;
+        width: 100%;
+    }
+    
+    @include upto(large-screens) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        grid-gap: 8px;
+
+        &__fix {
+            flex-basis: calc(50% - 4px);
+        }
+
+        &__flex {
+            flex-basis: 100%;
+        }
+    }
+
+    @include for(large-screens) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        grid-gap: 8px;
+
+        &__fix {
+            flex-basis: calc(20% - 7px);
+        }
+
+        &__flex {
+            flex-basis: calc(20% - 7px);
+        }
+    }
+}
+
+.fcon-fix-amount {
+    position: relative;
+
+    &__input {
+        @include donation-hidden-input();
+    }
+
+    &__label {
+        @include amount-block();
+
+        color: $color-text;
+        background: $color-white;
+        border: 1px solid $color-border;
+
+        &:hover {
+            background: $color-bg-light;
+        }
+    }
+}
+
+.fcon-fix-amount__input:checked + .fcon-fix-amount__label {
+    background: $progress_bar;
+    color: $color-white;
+    border-color: $progress_bar;
+}
+
+.fcon-flex-amount {
+    background: $color-white;
+    height: $input-height;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 2px;
+
+    &__input {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 4px;
+        margin: 0;
+        border: none;
+
+        font-family: $text;
+        font-size: 16px; 
+        text-transform: lowercase;
+        font-weight: 300;
+    }
+
+    &.focus {
+        border-color: $color-border-dark;
+        font-weight: 400;
+    }
+
+    &.valid {
+        border-color: $color-success;
+        border-width: 2px;
+    }
+
+    &.valid &__input {
+        font-weight: 500;
+    }
+
+    &.has-error {
+        border-color: $color-error;
+    }
+
+    &.has-error &__input {
+        color: $color-error;
+        font-weight: 400;
+    }
+}
+
+
+.fcon-natural-amount {
+
+    &__or {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        line-height: $input-height - 4px;
+    }
+
+    &__error {
+        width: 100%;
+        text-align: center;
+        padding-top: 6px;
+    }
+}
+
+.fcon-natural-control {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    &__input, &__result {
+        width: calc(50% - 4px);
+    }
+}
+
+.fcon-natural-input {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+
+    border-radius: 2px;
+    border: 1px solid $color-border;
+    height: $input-height;
+    color: $color-text;
+
+    &__less, &__more  {
+        width: 40px;
+        flex: 0 0 auto;
+        background: $color-bg-light;
+
+        font-size: 18px;
+        line-height: $input-height - 4px;
+        text-align: center;
+        transition: .35s;
+        cursor: pointer;
+
+        &:hover {
+            background: darken($color-bg-light, 5%);
+        }
+    }
+
+    &__number {
+        flex: 1 1 auto;
+        text-align: center;
+
+        font-size: 16px;
+        line-height: $input-height - 4px;
+        font-weight: 600;
+    }
+}
+
+.fcon-natural-result {
+    @include amount-block();
+
+    background: $progress_bar;
+    color: $color-white;
+    border: 1px solid $progress_bar;
+}
+
+.inactive .fcon-natural-result { 
+    background: $color-bg-light;
+    border-color: $color-border;
+    color: $color-text-light;
+}
+
+
+.fcon-form--full {
+    .fcon-natural-amount {
+
+        @include for(large-screens) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            &__or {
+                width: 70px;
+                flex: 0 0 auto;
+            }
+
+            &__control, &__flex {
+                width: calc(50% - 35px);
+            }
+
+            &__error {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.fcon-form--compact { // raise specifity
+    .fcon-amount {
+        
+        @include for(large-screens) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            grid-gap: 8px;
+
+            &__fix {
+                flex-basis: calc(50% - 8px);
+            }
+
+            &__flex {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    .fcon-natural-amount {
+
+        @include for(large-screens) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding-bottom: 12px;
+
+            &__or {
+                width: 100%;
+                flex: 0 0 auto;
+                margin: 4px 0;
+            }
+
+            &__control, &__flex {
+                width: 100%;
+            }
+        }
+    }
+}
+

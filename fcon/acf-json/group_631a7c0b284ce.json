@@ -1,0 +1,110 @@
+{
+    "key": "group_631a7c0b284ce",
+    "title": "Фандрайзинговый конструктор",
+    "fields": [
+        {
+            "key": "field_632812aeca4de",
+            "label": "Справочно",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Кампании, отмеченные в этом разделе, \"скрываются\" из общей логики поведения на сайте и используются только для сборов на страницах, созданных в разделе <b>Лендинги<\/b>. \r\n\r\nДля успешного сбора необходимо указать привязку к Лендингу и заполнить основание платежа. Остальные настройки скрываются и не оказывают влияние на поведение кампании.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6328123df74e8",
+            "label": "Режим \"Кампания для лендинга\"",
+            "name": "landing_type",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Кампания для привязки к лендингу",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_631a7c24bd13b",
+            "label": "Лендинг",
+            "name": "landing",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6328123df74e8",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "fconland"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_6356b524eae9f",
+            "label": "Основание платежа",
+            "name": "landing_payment_purpose",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "leyka_campaign"
+            }
+        ]
+    ],
+    "menu_order": 15,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1666802288
+}

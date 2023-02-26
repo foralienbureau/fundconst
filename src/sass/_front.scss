@@ -1,0 +1,126 @@
+/** Global elements and layout **/
+body {
+    @include body-text();
+    color: $body_text;
+    background: $color-bg-light;
+
+    &.is-locked {
+        overflow: hidden; // prevent scroll when modals open
+    }
+}
+
+.the-site {
+    max-width: $screen_limit; 
+    margin: 0 auto;
+    background: $body_bg; 
+    box-shadow: 1px 0px 5px 8px rgba(200,200,200, 0.13);
+    position: relative;
+}
+
+[x-cloak] {
+    display: none;
+}
+
+
+// content
+.fcon-content {
+    min-height: 80vh;
+    position: relative;
+    z-index: 2;
+}
+
+.fcon-container {
+    @include container-base();
+    max-width: $full_cont;
+
+    .fcon-container & { width: 100%; }
+}
+
+.fcon-konstructor {
+    max-width: $text_cont;
+    margin: 0 auto;
+}
+
+
+// header
+.fcon-header {
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .is-locked & {
+        z-index: -1;
+    }
+
+    @include upto(large-screens) {
+        padding-top: $mobile_pad;
+
+        &__branding {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    @include for(large-screens) {
+        padding-top: 40px; 
+
+        &__branding {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+
+
+.fcon-logo-link {
+    display: block;
+
+    img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+
+// footer
+.fcon-footer {
+    font-size: 0.75em;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    .fcon-logo-link {
+        max-width: 285px;
+    }
+    
+    @include upto(large-screens) {
+        padding: $base*6 0 $base*16; 
+
+        &__branding{
+            margin-bottom: $base*7;
+        }
+
+        &__description {
+            margin-bottom: $base*4;
+        }
+    }
+
+    @include for(large-screens) {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: $base*10 0;
+    }
+}
+
+
+// temp 
+.fcon-thankyou {
+    padding-top: 120px;
+}

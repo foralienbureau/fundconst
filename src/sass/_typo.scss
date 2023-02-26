@@ -1,0 +1,60 @@
+/** Typo **/
+$text:     var(--fcon-font-body);
+$title:    var(--fcon-font-title);
+
+
+@mixin body-text() {
+    font-family: $text; 
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+@mixin extra-title() {
+    font-family: $title; 
+    font-weight: 400;
+
+    @include upto(large-screens) {
+        font-size: 40px;
+        line-height: 1.3;
+    }
+
+    @include for(large-screens) {
+        font-size: 50px;
+        line-height: 1.1;
+    }
+}
+
+@mixin h2-title() {
+    font-family: $text; 
+    font-size: 2em;
+    line-height: 1.2;
+    letter-spacing: -.02em;
+}
+
+@mixin h3-title() {
+    font-family: $text; 
+    font-size: 1.6em;
+    line-height: 1.3;
+    letter-spacing: -.01em;
+}
+
+@mixin h4-title() {
+    font-family: $text; 
+    font-size: 1.4em;
+    letter-spacing: -.01em;
+}
+
+@mixin h5-title() {
+    font-family: $text; 
+    font-weight: 500;
+    font-size: 1.35em;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+@mixin h6-title() {
+    font-family: $text; 
+    font-size: 1em;
+    font-weight: 900;
+}

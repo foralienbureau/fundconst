@@ -1,0 +1,4 @@
+/* Main column width */
+html :where(.wp-block) {
+    max-width: 1024px !important;
+}

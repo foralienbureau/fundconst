@@ -1,0 +1,19 @@
+/* button */
+
+.fcon-block-wpbutton {
+
+}
+
+.wpbutton {
+    @include button-base();
+    @include button-size();
+    
+
+    &.filled {
+        @include button-filled();
+    }
+
+    &.outline {
+        @include button-outline();
+    }
+}

@@ -1,0 +1,38 @@
+:root {
+    // Changes dynamically via javascript
+    --scroll-bar-width: 0px;
+}
+
+@import 'presets';
+@import 'colors';
+@import 'typo';
+@import 'mixins';
+@import 'reset';
+
+@import 'front'; 
+
+
+//gutenberg
+@import 'gutenberg/mixins';
+@import 'gutenberg/text';
+@import 'gutenberg/native';
+
+@import 'gutenberg/border';
+@import 'gutenberg/cover_section';
+@import 'gutenberg/cta';
+@import 'gutenberg/donation_section';
+@import 'gutenberg/emtext';
+@import 'gutenberg/wpbutton';
+
+@import 'gutenberg/thankyou';
+
+
+// doantions
+@import 'donations/mixins';
+@import 'donations/form';
+@import 'donations/form-agree';
+@import 'donations/form-inputs';
+@import 'donations/form-amount';
+@import 'donations/form-period';
+@import 'donations/target';
+@import 'donations/modal';

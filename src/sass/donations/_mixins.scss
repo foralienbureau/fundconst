@@ -1,0 +1,14 @@
+/* form related mixins */
+$input-height : 44px;
+$color-border-focus: #aaa;
+
+@mixin donation-hidden-input() {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 4px;
+    left: 0;
+
+    border: none;
+    opacity: 0;
+}

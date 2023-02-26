@@ -1,0 +1,94 @@
+/* donors fields */
+
+.fcon-donor-field {
+    font-family: $text;
+    position: relative;
+    padding-top: 8px;
+    z-index: 2;
+    
+    &__label {
+        display: inline-block;
+        
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 16px;
+        
+        position: absolute;
+        left: 8px;
+        top: 0;
+        padding: 0 10px;
+        margin: 0;
+        z-index: 10;
+
+        background: $color-white;
+        border-radius: 20%;
+        
+        @include for(small-screens) {
+            left: 14px;
+            padding: 0 10px;
+        }
+    }
+
+    &__error {
+        background: $color-white;
+        line-height: 16px;
+        padding: 1px 9px;
+        top: -1px;
+        left: 9px;
+
+        font-size: 13px;
+        line-height: 16px;
+        color: $color-error;
+        z-index: 20;
+
+        @include for(medium-screens) {
+            position: absolute;
+            top: -1px;
+            left: 16px;
+        }
+    }
+
+    &__input {
+        -webkit-appearance: none;
+        position: relative;
+        z-index: 4;
+
+        width: 100%;
+        height: $input-height;
+        padding: 8px 16px;
+        border: 1px solid $color-border;
+        border-radius: 2px;
+        transition: all .35s;
+
+        font-family: $text;
+        font-size: 16px;
+        line-height: 30px;
+        
+        &::placeholder {
+            opacity: 0.5;
+        }
+
+        &:focus {
+            border-color: $color-border-dark;
+        }
+    }
+
+    &.has-error &__label {
+        opacity: 0; 
+    }
+
+    &.has-error &__input {
+        border-color: $color-error;
+    }
+
+    &.valid &__label {
+        font-weight: 400;
+        color: $color-success;
+    }
+
+    &.valid &__input {
+        border-color: $color-success;
+    }
+
+}
+

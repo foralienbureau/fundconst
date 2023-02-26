@@ -1,0 +1,44 @@
+/** period **/
+.fcon-period {
+    background: $color-bg-light;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    border-bottom: 1px solid $color-border;
+
+    &__cell {
+        position: relative;
+    }
+
+    &__input {
+        @include donation-hidden-input();
+    }
+
+    &__label {
+        display: inline-block;
+        padding: 2px $base*5 0;
+        margin: -2px 0;
+        height: $input-height + 6px;
+
+        font-size: 17px;
+        line-height: $input-height;
+        text-transform: uppercase;
+        color: $color-text;
+        border: 1px solid transparent;
+
+        cursor: pointer;
+        pointer-events: all;
+    }
+}
+
+.fcon-period__input:checked + .fcon-period__label {
+    background: $color-white;
+    font-weight: 600;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border: 1px solid $color-border;
+    border-bottom-color: $color-white;
+
+    cursor: default;
+}
+

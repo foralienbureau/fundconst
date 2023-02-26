@@ -1,0 +1,301 @@
+/* cover_section */
+
+.fcon-block-cover_section {
+
+    @include upto(large-screens) {
+        &.has-target.state-open {
+            padding-bottom: 122px;
+        }
+    }
+}
+
+.cover_section {
+    position: relative;
+    z-index: 2;
+
+    &__bg {
+        position: absolute;
+        z-index: 3;
+        width: calc(100vw - #{$scrollbar});
+        max-width: $screen_limit; 
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+        @include align-container();
+    }
+
+
+    @include upto(large-screens) {
+        z-index: 200;
+        
+        &__title {
+            font-family: $title;
+            font-size: 50px;
+            margin-bottom: $base*4;
+        }
+
+        &__lead {
+            &.subtitle {
+                font-family: $title;
+                font-size: 24px;
+                line-height: 1.2;
+            }
+
+            &.lead {
+                font-family: $text;
+                font-size: 19px;
+                line-height: 1.5;
+                font-weight: 500;
+            }
+        }
+
+        &__content {
+            padding-top: $base*15;
+            padding-bottom: $base*12;
+            height: 100vh;
+        }
+
+        &__grid {
+            height: 100%;
+        }
+
+        &__header {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+        }
+
+        &__widget {
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            width: 100%;
+        }
+
+        &.mobile-variant_one &__header {
+            justify-content: space-between;
+        }
+
+        .state-open &.mobile-variant_one &__header {
+            padding-bottom: $base*8;
+        }
+
+        &.mobile-variant_two &__title {
+            margin-top: auto;
+        }
+
+        &__closed_mobile {
+            padding: $base*10 0;
+            background: $color-white;
+            position: relative;
+            &:after {
+                content: '';
+                width: calc(100vw - #{$scrollbar});
+                height: 1px;
+                background: $color-border;
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .wpbutton.filled {
+        padding: 16px 8px;
+    }
+
+    @include upto(medium-screens) {
+        min-height: 100vh;
+
+        .state-error &__widget,
+        .state-closed &__widget {
+            display: none;
+        }
+    }
+
+    @include between(medium-screens, large-screens) {
+        min-height: 60vh;
+
+        .state-error &__widget,
+        .state-closed &__widget {
+            display: none; 
+        }
+    }
+
+    @include for(large-screens) {
+
+        &__content {
+            min-height: 100vh;
+            padding: 22vh 0 90px;
+        }
+
+        &__title {
+            font-family: $title;
+            font-size: 60px;
+            margin-bottom: $base*4;
+        }
+
+        &__lead {
+            &.subtitle {
+                font-family: $title;
+                font-size: 34px;
+                line-height: 1.2;
+            }
+
+            &.lead {
+                font-family: $text;
+                font-size: 27px;
+                line-height: 1.5;
+                font-weight: 500;
+            }
+        }
+
+        &__widget {
+            background: $color-white;
+            width: 375px;
+            border-radius: 2px;
+            border: 1px solid $color-border;
+            padding: $base*5;
+            &:empty {
+                opacity: 0;
+            }
+        }
+
+        &.desktop-left &__grid {
+            width: 60%;
+        }
+
+        &.desktop-left &__widget {
+            margin-top: $base*8;
+        }
+
+        &.desktop-right &__grid {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &.desktop-right &__widget {
+            flex: 0 0 auto;
+        }
+
+        &.desktop-right &__widget {
+            flex: 0 0 auto;
+        }
+
+        &.desktop-right &__header {
+            width: 60%;
+            padding-bottom: $base*5;
+        }
+
+        &.desktop-right &__title {
+            margin-bottom: $base*6;
+        }
+
+        &__closed_mobile {
+            display: none;
+        }
+    }
+}
+
+.the-content h1.cover_section__title {
+    line-height: 1;
+}
+
+
+.thankyou-widget {
+
+    &__text {
+        margin-bottom: $base*6;
+    }
+
+    &__button {
+        margin-top: auto;
+
+        .wpbutton {
+            width: 100%;
+        }
+    }
+
+    @include for(large-screens) {
+        min-height: 375px - 60px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+    }
+}
+
+.notice-widget {
+
+    &__text {
+        color: $color-error;
+        font-size: 1.2em;
+    }
+
+    @include for(large-screens) {
+        min-height: 375px - 60px;
+    }
+}
+
+.compact-widget {
+
+    &__target {
+        margin-bottom: $base*4;
+    }
+
+    @include upto(large-screens) { 
+        &__target {
+            background: $color-white;
+            padding: $base*5.5 $base*5 $base*5;
+            margin: 14px -30px 0; /// TARGET
+        }
+
+        &__form {
+            background: transparent;
+        }
+
+        .fcon-form {
+            background: transparent;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: calc(100vw - #{$scrollbar});
+            z-index: 200;
+
+            &__title, &__amount, &__period {
+                display: none;
+            }
+
+            &__submit {
+                padding: 0 $base*5 $base*2;
+
+                .fcon-donate-button {
+                    width: 100%;
+                    padding: 18px 30px;
+                    font-size: 19px;
+                    max-height: none;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 340px) {
+        .fcon-form__submit .fcon-donate-button {
+            font-size: 17px;
+            padding: 18px 10px;
+        }
+    }
+
+}
