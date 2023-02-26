@@ -12,17 +12,21 @@
     </head>
     <body>
         <header class="page-header" role="banner">
-            <h1 class="page-header__name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-            <h2 class="page-header__tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-            
-            <nav class="page-header__link">
-                <a href="{{ site.download_url }}" class="btn">Скачать</a>
-                <a href="{{ site.wiki_url }}" class="btn">Инструкция</a>
-            </nav>
+            <div class="container">
+                <h1 class="page-header__name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+                <div class="page-header__tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</div>
+                
+                <nav class="page-header__link">
+                    <a href="{{ site.download_url }}" class="btn">Скачать</a>
+                    <a href="{{ site.wiki_url }}" class="btn">Инструкция</a>
+                </nav>
+            </div>
         </header>
 
         <main class="page-content" role="main">
-            {{ content }}
+            <div class="container">
+                {{ content }}
+            </div>
         </main>
 
         <footer class="page-footer">
